@@ -1,7 +1,6 @@
-#include<bits/stdc++.h>
+#include <iostream>
 #include<vector>
 using namespace std;
-
 int count(string s,int w)
 {int count1=0,count2=0;
     for(int i=0;i<s.length();i++)
@@ -15,34 +14,27 @@ int count(string s,int w)
     w=w+1;
 return w;    
 }
-int solve (int n, string s) {
-   vector<string> st;
-   vector<string>::iterator t;
-   for (int i = 0; i < n; i++)  
-        for (int len = 1; len <= n - i; len++) 
-             st.push_back(s.substr(i, len));
-   int w=0,counter=0;
-    for(t=st.begin();t<st.end();t++)
+
+int main()
+{
+    int n;
+    vector<string> s;
+    string st;
+    cin>>n>>st;
+    vector<string>::iterator t;
+    for (int i = 0; i < st.length(); i++)  
+        for (int len = 1; len <= st.length() - i; len++) 
+        {
+             s.push_back(st.substr(i, len));
+        }
+    int w=0,counter=0;
+    for(t=s.begin();t<s.end();t++)
     {
     counter=count(*t,w)+counter;
     }
-
-    return counter;          
-
-   // Write your code here
-   
+    cout<<counter;
+    return 0;
 }
 
-int main() {
 
-    ios::sync_with_stdio(0);
-    cin.tie(0);
-    int n;
-    cin >> n;
-    string s;
-    getline(cin, s);
 
-    int out_;
-    out_ = solve(n, s);
-    cout << out_;
-}
