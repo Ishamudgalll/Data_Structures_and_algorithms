@@ -29,6 +29,7 @@ int main()
         }
     int w=0,counter=0;
     for(t=s.begin();t<s.end();t++)
+    
     {
     counter=count(*t,w)+counter;
     }
