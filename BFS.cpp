@@ -23,6 +23,7 @@
     }
     int idx_s = s-1;
     found[idx_s] = true;
+
     dist[idx_s] = 0;
 
     //initialize queue holding only s in the beginning
